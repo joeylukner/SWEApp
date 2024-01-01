@@ -1,0 +1,62 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>View All Preferences</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <script type="text/javascript">
+      <!--
+      function confirmDelete(name) {
+        var answer = confirm("Are sure you want to delete " + name + "?")
+        if (answer){
+          window.location = "/deleteperson?name=" + name;
+        }
+      }
+      //-->
+      </script>
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="row h-100">
+        <div class="col-lg-4"><!-- this is just here to center the next column --></div>
+        <div class="col-lg-4 text-center my-auto">
+            <% if (messages && messages.length > 0) { %>
+              <p>
+              Here are all the messages for <%= messages[0].recipient %>:
+              </p>
+              <p>
+              <table class="table table-bordered">
+                <% messages.forEach( (message) => { %>
+                  <tr>      
+                    <td>Sender: <b><%= message.sender %></b></td> 
+                    <td>Message: <b><%= message.message %></b></td> 
+                  </tr>                      
+                <% }) %>
+              </table>
+              </p>
+            <% } else { %>
+              <p>There are no Message objects in the database.</p>
+            <% } %>
+
+          <p>
+            <a href="/public/messageform.html">Create a new Message</a>
+          </p>
+          <p>
+            <a href="/allpersons">View all People</a>
+          </p>
+          <p>
+            <a href="/home">Home</a>
+          </p>
+        </div>
+
+        <div class="col-lg-4"><!-- this is just here to center the previous column --></div>
+      </div>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>
