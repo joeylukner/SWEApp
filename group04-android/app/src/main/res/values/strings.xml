@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Sample Web App</string>
+    <string-array name="restaurant_array">
+        <item>Easy</item>
+        <item>Medium</item>
+        <item>Hard</item>
+    </string-array>
+</resources>
